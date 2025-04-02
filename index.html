@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacBook Review Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍎 MacBook Review Analysis</h1>
+            <p class="subtitle">Comprehensive analysis of MacBook reviews and rankings</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Input Data</h2>
+                <div class="input-group">
+                    <label for="websites">Website URLs (one per line):</label>
+                    <textarea id="websites" rows="5" placeholder="amazon.com&#10;bestbuy.com&#10;walmart.com&#10;apple.com&#10;bhphotovideo.com"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="rankings">Rankings (one per line):</label>
+                    <textarea id="rankings" rows="5" placeholder="1&#10;2&#10;3&#10;4&#10;5"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="reviews">Reviews (one per line):</label>
+                    <textarea id="reviews" rows="5" placeholder="Great product! The M2 chip is amazing...&#10;Best MacBook I've ever used...&#10;Good value for money...&#10;Perfect for professional work...&#10;Excellent customer service..."></textarea>
+                </div>
+                <button id="analyzeBtn">Analyze Data</button>
+            </section>
+
+            <section class="results-section">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="ranking">Ranking Analysis</button>
+                    <button class="tab-btn" data-tab="review">Review Analysis</button>
+                    <button class="tab-btn" data-tab="trends">Trends</button>
+                </div>
+
+                <div class="tab-content">
+                    <div id="ranking" class="tab-pane active">
+                        <div class="chart-container">
+                            <div id="rankingChart"></div>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <h3>Average Ranking</h3>
+                                <p id="avgRanking">-</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Best Ranking</h3>
+                                <p id="bestRanking">-</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Worst Ranking</h3>
+                                <p id="worstRanking">-</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="review" class="tab-pane">
+                        <div class="chart-container">
+                            <div id="sentimentChart"></div>
+                        </div>
+                        <div class="word-cloud-container">
+                            <h3>Word Cloud</h3>
+                            <div id="wordCloud"></div>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <h3>Average Sentiment</h3>
+                                <p id="avgSentiment">-</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Most Positive</h3>
+                                <p id="mostPositive">-</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Most Negative</h3>
+                                <p id="mostNegative">-</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="trends" class="tab-pane">
+                        <div class="chart-container">
+                            <div id="trendChart"></div>
+                        </div>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <h3>Amazon Trend</h3>
+                                <p id="amazonTrend">-</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>BestBuy Trend</h3>
+                                <p id="bestbuyTrend">-</p>
+                            </div>
+                            <div class="metric-card">
+                                <h3>Walmart Trend</h3>
+                                <p id="walmartTrend">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Built with ❤️ for MacBook Review Analysis</p>
+            <p>Data updated daily</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
